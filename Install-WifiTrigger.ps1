@@ -42,7 +42,7 @@ $taskXml = @"
   <Principals>
     <Principal id="Author">
       <UserId>$user</UserId>
-      <LogonType>InteractiveSession</LogonType>
+      <LogonType>InteractiveToken</LogonType>
       <RunLevel>Highest</RunLevel>
     </Principal>
   </Principals>
