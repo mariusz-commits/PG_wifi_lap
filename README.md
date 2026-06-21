@@ -5,9 +5,10 @@ Projekt umożliwia automatyczne wyświetlanie okna wyboru konfiguracji IP (DHCP 
 ## Szybki start
 1. Pobierz pliki `Set-IpConfig.ps1` oraz `Install-WifiTrigger.ps1`.
 2. Uruchom PowerShell jako Administrator.
-3. Wykonaj skrypt instalacyjny:
+3. Wykonaj skrypt instalacyjny (jeśli system blokuje skrypt, użyj Unblock-File):
    ```powershell
-   .\Install-WifiTrigger.ps1
+   ls | Unblock-File
+   powershell -ExecutionPolicy Bypass -File .\Install-WifiTrigger.ps1
    ```
 
 ## Dokumentacja

@@ -25,9 +25,13 @@ Narzędzie służy do automatycznego wyświetlania okna wyboru profilu adresacji
     ```powershell
     .\Install-WifiTrigger.ps1
     ```
-5.  Jeśli pojawi się błąd o zablokowanych skryptach, wykonaj najpierw:
+5.  Jeśli pojawi się błąd o zablokowanych skryptach (np. *UnauthorizedAccess* lub *SecurityError*), odblokuj pliki poleceniem:
     ```powershell
-    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    ls | Unblock-File
+    ```
+    A następnie uruchom instalator z pominięciem polityki:
+    ```powershell
+    powershell -ExecutionPolicy Bypass -File .\Install-WifiTrigger.ps1
     ```
 
 ## Sposób działania
