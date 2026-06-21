@@ -43,7 +43,7 @@ $taskXml = @"
     <Principal id="Author">
       <UserId>$user</UserId>
       <LogonType>InteractiveToken</LogonType>
-      <RunLevel>Highest</RunLevel>
+      <RunLevel>HighestAvailable</RunLevel>
     </Principal>
   </Principals>
   <Settings>
@@ -84,7 +84,7 @@ try {
     schtasks /delete /tn "$taskName" /f 2>$null
 
     # Importuj nowe zadanie z XML
-    Register-ScheduledTask -Xml (Get-Content $tempXmlPath -Raw) -TaskName $taskName -Force
+    Register-ScheduledTask -Xml (Get-Content $tempXmlPath -Raw) -TaskName $taskName -Force -ErrorAction Stop
 
     Write-Host "Sukces! Zadanie '$taskName' zostało zarejestrowane." -ForegroundColor Green
     Write-Host "Skrypt będzie uruchamiany automatycznie po każdym połączeniu z Wi-Fi." -ForegroundColor Gray
